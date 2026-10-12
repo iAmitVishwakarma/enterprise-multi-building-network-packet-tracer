@@ -1,0 +1,17 @@
+hostname Router_Building_A
+!
+interface GigabitEthernet0/0
+ description Link to Core/Distribution Switch
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+!
+interface Serial0/1/0
+ description WAN Link to Building B
+ ip address 10.0.0.1 255.255.255.252
+ clock rate 64000
+ no shutdown
+!
+router ospf 1
+ network 192.168.10.0 0.0.0.255 area 0
+ network 10.0.0.0 0.0.0.3 area 0
+!
