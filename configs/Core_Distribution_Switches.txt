@@ -1,0 +1,13 @@
+hostname Dist_Switch_1
+!
+vlan 10
+ name Sales
+vlan 20
+ name IT_Admin
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+!
+interface Vlan10
+ ip address 192.168.10.2 255.255.255.0
+!
