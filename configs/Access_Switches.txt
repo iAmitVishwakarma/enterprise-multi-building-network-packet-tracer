@@ -1,0 +1,10 @@
+hostname Access_Switch_1
+!
+interface range FastEthernet0/1 - 10
+ switchport mode access
+ switchport access vlan 10
+!
+interface GigabitEthernet0/1
+ description Uplink to Distribution Switch
+ switchport mode trunk
+!
